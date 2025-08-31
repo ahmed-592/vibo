@@ -41,10 +41,8 @@ async function addPhoto(e) {
    const formData = new FormData();
    formData.append('photo', profilePhoto);
    const response = await uploadProfilePhoto(formData);
-   console.log(response);
     if(response.message){
       await getUserDataApi();
-      console.log(userData.photo);
       setSavePhoto(false);
       setLoading(false);
     }
@@ -55,55 +53,10 @@ function handleImage(e) {
   setProfilePhoto(e.target.files[0]);
   setChoosePhoto(true);
 
-  // e.target.value = '';
-  console.log(e.target.value);
     setUrlImage(URL.createObjectURL(e.target.files[0]));
   
 
 }
-
- 
-
-
-
-// ...existing code...
-
-// const [loadingPosts, setLoadingPosts] = useState(true); // Add this state
-
-// async function getUserAllPosts() {
-//   setLoadingPosts(true); // Start loading
-//   const response = await getUserPosts(userData._id);
-//   setPosts(response.posts);
-//   setLoadingPosts(false); // Stop loading
-// }
-
-// useEffect(() => {       
-//   getUserAllPosts()
-// }, [userData]);
-
-// // ...existing code...
-
-// <div className="w-fullmx-auto my-5 rounded-lg shadow-md relative">
-//   <h2 className='bg-white p-3 rounded-t-lg font-semiboldbold text-2xl'>Posts</h2>
-//   {loadingPosts ? (
-//     <LoadingScreen />
-//   ) : posts && posts.length > 0 ? (
-//     posts.map(post => (
-//       <PostCard key={post.id} post={post} commentLimit={posts.length} callback={getUserAllPosts} />
-//     ))
-//   ) : (
-//     <p className="text-center text-gray-500 py-8 bg-white rounded-b-lg">No posts found.</p>
-//   )}
-// </div>
-
-
-
-
-
-
-
-
-
 
     return <>
 

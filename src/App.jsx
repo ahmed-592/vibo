@@ -12,6 +12,7 @@ import AuthProtectedRoute from './Components/AuthProtectedRoute';
 import MainLayout from './Layout/MainLayout';
 import AuthLayout from './Layout/AuthLayout';
 import ChangePassword from './Components/ChangePassword';
+import NotFound from './Pages/NotFound';
 
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
       {path:"post-details/:id" , element:<ProtectedRoute><PostDetails/></ProtectedRoute>},
       {path:"profile" , element:<ProtectedRoute><Profile/></ProtectedRoute>},
       {path:"change-password" , element:<ProtectedRoute><ChangePassword/></ProtectedRoute>},
+      {path:"*" , element:<ProtectedRoute><NotFound/></ProtectedRoute>},
     ]},
 
     {path:"" , element: <AuthLayout/> , children: [

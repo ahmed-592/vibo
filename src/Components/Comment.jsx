@@ -35,8 +35,6 @@ export default function Comment({postComment , post , callback}) {
         setLoading(true);
        
         const response = await updateComment(CommentId ,content);
-        console.log(response);
-        
         await callback();
         setLoading(false);
         setUpdate(false);

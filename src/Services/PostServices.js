@@ -15,7 +15,6 @@ export async function getAllPosts() {
            headers,
            params: {
                 sort: '-createdAt',
-                limit: 5
             }
         });
         
@@ -59,7 +58,7 @@ export async function addPost(formData) {
             
             
         });
-        console.log(data);
+       
         return data;
     }catch(err){
         console.log(err);
@@ -75,7 +74,7 @@ export async function editPost(formData , postId) {
             
             
         });
-        console.log(data);
+        
         return data;
     }catch(err){
         console.log(err.response.post);
@@ -91,7 +90,7 @@ export async function deletePost(postId) {
             
             
         });
-        console.log(data);
+        
         return data;
     }catch(err){
         console.log(err.response.post);

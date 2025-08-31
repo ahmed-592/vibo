@@ -20,13 +20,10 @@ export default function PostDetails()
    
      const response = await getSinglePost(id);
 
-     
-       console.log(response.post);
-      //  console.log("aa  " +post.comments.length);
        
       setPost(response.post);
       setLoading(false);
-    console.log(post);
+   
     
     
   }

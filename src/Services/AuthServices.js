@@ -13,7 +13,7 @@ export async function getUserData() {
                 token: localStorage.getItem('token')
             }
         });
-        console.log(data);
+        
         return data;
     }catch(err){
         console.log(err);
@@ -25,7 +25,7 @@ export async function sendSignUpData(userData) {
 
     try{
         const {data} = await axios.post(`https://linked-posts.routemisr.com/users/signup` , userData);
-        console.log(data.message);
+        
         return data.message;
     }catch(err){
         console.log(err.response.data.error);
@@ -38,7 +38,7 @@ export async function sendSignInData(userData) {
 
     try{
         const {data} = await axios.post(`https://linked-posts.routemisr.com/users/signin` , userData);
-        console.log(data.message);
+       
         return data;
     }catch(err){
         console.log(err.response.data.error);

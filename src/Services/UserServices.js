@@ -12,7 +12,7 @@ export async function uploadProfilePhoto(formData) {
             
             
         });
-        console.log(data);
+        
         return data;
     }catch(err){
         console.log(err);
@@ -30,7 +30,7 @@ export async function getUserPosts(userId) {
             
             
         });
-        console.log(data);
+        
         return data;
     }catch(err){
         console.log(err);
@@ -45,7 +45,7 @@ export async function changePassword(userData) {
         const {data} = await axios.patch(`https://linked-posts.routemisr.com/users/change-password`, userData,{
             headers,
             });
-        console.log(data);
+        
         return data;
     }catch(err){
         console.log(err.response.data.error);

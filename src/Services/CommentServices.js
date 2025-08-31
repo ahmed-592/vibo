@@ -16,7 +16,7 @@ export async function creatComment(contentComment, postId) {
 } ,{ 
             headers,
         });
-        console.log(data);
+       
         return data;
     }catch(err){
         console.log(err.response.data);
@@ -31,7 +31,7 @@ export async function deleteComment(commentId) {
         const {data} = await axios.delete(`https://linked-posts.routemisr.com/comments/${commentId}`,{
             headers,
         });
-        console.log(data);
+        
         return data;
     }catch(err){ 
         console.log(err);
@@ -46,7 +46,7 @@ export async function updateComment(commentId , content) {
             headers,
            
         });
-        console.log(data);
+        
         return data;
     }catch(err){ 
         console.log(err);
@@ -61,7 +61,7 @@ export async function getAllComments(postId) {
         const {data} = await axios.get(`https://linked-posts.routemisr.com/posts/${postId}/comments`,{
             headers,
         });
-        console.log(data);
+        
         return data;
     }catch(err){ 
         console.log(err);
