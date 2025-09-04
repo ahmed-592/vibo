@@ -1,5 +1,5 @@
 import { Button, Spinner } from "@heroui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addPost, editPost } from "../Services/PostServices";
 
 
@@ -7,10 +7,19 @@ import { addPost, editPost } from "../Services/PostServices";
 export default function CreatPost({callback , post , setIsUpdating , isUpdating}) {
 
 const [postBody, setPostBody] = useState(post?.body??'');
-const [postImage, setPostImage] = useState(post?.image??null);
-const [urlImage, setUrlImage] = useState('');
+const [postImage, setPostImage] = useState(null);
+const [urlImage, setUrlImage] = useState(post?.image??'');
 const [loading, setLoading] = useState(false);
  
+async function urlToFile() {
+  
+let response = await fetch(post.image);
+let blobData = await response.blob();
+
+setPostImage(new File([blobData] , 'image' , {type : 'image/jpg'}));
+}
+
+useEffect(()=> {post && urlToFile}, [])
 function restPost() {
   
 setPostBody('');
