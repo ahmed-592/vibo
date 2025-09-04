@@ -47,7 +47,7 @@ export default function Comment({postComment , post , callback}) {
 
 
          <div className="flex gap-3 items-center justify-between">
-          <CardHeader image={post.user?.photo} userName={postComment.commentCreator.name} date={postComment.createdAt.split('.' , 1)[0].split('T').join(' ')}/>
+          <CardHeader image={postComment.commentCreator.photo} userName={postComment.commentCreator.name} date={postComment.createdAt.split('.' , 1)[0].split('T').join(' ')}/>
 
        
            {userData._id === postComment.commentCreator?._id && userData._id === post.user._id && 
